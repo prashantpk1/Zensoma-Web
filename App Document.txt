@@ -1,0 +1,766 @@
+App Document
+Based url for redspark server : https://redsparkte.a2hosted.com/zensoma/api/v1/
+   (1) V1 => login
+       {
+                url : {{local}}/login
+                method : post
+                authorization : no
+                header : language(code)
+                input parm : {
+                                        email : subadmin@mailinator.com
+                                        password : Test@123
+                             }
+       }
+
+===========================================
+
+ (2) V1 => register
+      {
+                url : {{local}}/register
+                method : post
+                authorization : no
+                header : language(code)
+                input parm : {
+                                        name : demo user
+                                        phone : 7946132545
+                                        email : demouser@mailinator.com
+                                        password : Test@123
+                                        confirm_password : Test@123
+                                        country_ir : 12
+                            }
+      }
+
+
+===========================================
+
+ (3) V1 => social-register
+      {
+                url : {{local}}/social-register
+                method : post
+                authorization : no
+                header : language(code)
+                input parm : {
+                                        name : demo user
+                                        phone : 7946132545
+                                        email : demouser@mailinator.com
+                            }
+      }
+
+===========================================
+
+
+ (4) V1 => forgot-password
+    {
+            url : {{local}}/forgot-password
+                method : post
+                authorization : no
+                header : language(code)
+                input parm : {
+                                        email : subadmin@mailinator.com
+                            }
+    }
+
+
+
+===========================================
+
+  (5)  V1 => verify-otp
+    {
+            url : {{local}}/verify-otp
+                method : post
+                authorization : no
+                header : language(code)
+                input parm : {
+                                        user_id : 48
+                                        otp : 741258 (6 digits)(otp received in email)
+                            }
+    }
+
+===========================================
+
+  (6)  V1 => reset-password
+    {
+            url : {{local}}/reset-password
+                method : post
+                authorization : no
+                header : language(code)
+                input parm : {
+                                        user_id : 48,
+                                        password : Test@123,
+                                        confirm_password : Test@123
+                            }
+    }
+
+===========================================
+
+ (7)    V1 => profile
+    {
+            url : {{local}}/profile/13
+
+                method : get
+                authorization : yes(Bearer Token)
+                header : language(code)
+    }
+
+
+=========================================
+
+
+  (8) V1 =>edit-profile
+    {
+            url : {{local}}/edit-profile
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parm : {
+                                        name : user1,
+                                        email : user1@mailinator.com,
+                                        phone : 7412589630,
+                                        profile_image : image,(optinal)
+                                  }
+
+    }
+
+
+===========================================
+
+(9)   V1 => change-password
+    {
+            url : {{local}}/change-password
+                method : post
+                authorization : no
+                header : language(code)
+                input parm : {
+                                        current_password : 12345678,
+                                        password : Test@123,
+                                        confirm_password : Test@123
+                            }
+    }
+
+
+===========================================
+
+(10)  V1 => logout
+    {
+            url : {{local}}/logout
+                method : post
+                authorization : no
+                header : language(code)
+
+    }
+
+02-02-2024
+===========================================
+
+(11)   V1 => get-categories
+    {
+            url : {{local}}/get-categories
+                    method : get
+                    authorization : {{token}}
+                    header : language(code)
+    }
+
+===========================================
+
+(12)  V1 => get-sub-categories
+    {
+            url : {{local}}/get-sub-categories/{_categoryid}
+                    method : get
+                    authorization : {{token}}
+                    header : language(code)
+    }
+
+===========================================
+
+(13)  V1 => get-languages
+    {
+            url : {{local}}/get-languages
+                    method : get
+                    authorization : {{token}}
+                    header : language(code)
+    }
+
+===========================================
+
+(14)    V1 =>get-therapists
+    {
+            url : {{local}}/get-therapists
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    pagination : available
+                     input parm : {
+                                        serach : sub admin,
+                                  }
+
+    }
+
+===========================================
+
+(15)   V1 => get-therapist-detail/{id}
+    {
+            url : {{local}}/get-therapist-detail/{id}
+                    method : get
+                    authorization : {{token}}
+                    header : language(code)
+    }
+
+===========================================
+
+(16)  V1 =>get-subscriptions
+    {
+            url : {{local}}/get-subscriptions
+                    method : get
+                    authorization : {{token}}
+                    header : language(code)
+    }
+
+===========================================
+
+(17)   V1 =>get-blogs
+    {
+            url : {{local}}/get-blogs
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    pagination : available
+                     input parm : {
+                                        category_id : 1,
+                                        search : That
+                                  }
+    }
+
+===========================================
+
+(18)   V1 =>get-blog
+    {
+            url : {{local}}/get-blog
+                    method : get
+                    authorization : {{token}}
+                    header : language(code)
+    }
+
+===========================================
+
+(19) V1 =>get-cms-content
+    {
+            url : {{local}}/get-cms-content
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parm : {
+                                        page_name : abount_us,
+                                  }
+                    all cms page name(slug) => (abount_us,privacy_policy,term_and_conditions)
+
+    }
+
+===========================================
+
+
+(20) V1 =>add-or-remove-favorite
+    {
+            url : {{local}}/add-or-remove-favorite
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parm : {
+                                        session_id : {session_id},
+                                 }
+
+    }
+
+===========================================
+
+
+(21) V1 =>get-all-labels
+    {
+            url : {{local}}/get-all-labels
+                    method : get
+                    authorization : {{token}}
+                    header : language(code)
+
+  }
+
+===========================================
+
+(22) V1 =>buy-or-update-user-subscription
+    {
+            url : {{local}}/buy-or-update-user-subscription
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parms :
+                            {
+                                subscription_id:1
+                                payment_mode:direct_payment
+                                transaction_type:subscription
+                            }
+
+  }
+
+  ========================================
+
+(23) v1 =>get-predefined-questions
+
+                    url : {{local}}/get-predefined-questions
+                    method : get
+                    authorization : {{token}}
+                    header : language(code)
+
+
+  ========================================
+
+(24) v1 =>sessions
+
+                    url : {{local}}sessions
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    pagination : available
+                      input parms :
+                            {
+                                category_id:22
+                            }
+
+==========================================
+
+
+(25) V2 =>session-detail
+ {
+            url : {{local}}/session-detail
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parm : {
+                                        session_id : {session_id},
+                                 }
+
+}
+
+===========================================
+
+
+(26) v1 => friend-list
+
+                    url : {{local}}/friend-list
+                    method : get
+                    authorization : {{token}}
+                    header : language(code)
+
+
+==========================================
+
+
+(27) v1 => add-friend
+
+                    url : {{local}}/add-friend
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parms :
+                            {
+                                received_id:1
+                            }
+
+
+==========================================
+
+
+(28) v1 => remove-friend
+
+                    url : {{local}}/remove-friend
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parms :
+                            {
+                                received_id:1
+                            }
+
+
+==========================================
+
+
+(29) v1 => available-slot
+
+                    url : {{local}}/available-slot
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parms :
+                            {
+                                category_id:28
+                                date:2024-02-20 (YYYY-MM-DD)
+                                therapist_id : 14
+                            }
+
+
+==========================================
+
+
+(30) v1 => buddy-list
+
+                    url : {{local}}/buddy-list
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    pagination : available
+
+
+==========================================
+
+
+(31) v1 => add-buddy
+
+                    url : {{local}}/add-buddy
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parms :
+                            {
+                                user_id:50 (user_id which  add to buddy network)
+                            }
+
+
+==========================================
+
+
+(32) v1 => remove-buddy
+
+                    url : {{local}}/remove-buddy
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parms :
+                            {
+                               buddy_network_id:1
+                            }
+
+
+==========================================
+
+(33)   V1 => get-countrys
+    {
+            url : {{local}}/get-countrys
+                    method : get
+                    authorization : no token
+                    header : language(code)
+    }
+
+=========================================
+
+(34) v1 => add-update-session-my-session
+
+                    url : {{local}}/add-update-session-my-session
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    input parms :
+                            {
+                               session_id:15,
+                               status:1, {0 => start , 1 => comaplete}
+                            }
+
+
+==========================================
+
+
+(34) v1 => my-session
+
+                    url : {{local}}/my-session
+                    method : post
+                    authorization : {{token}}
+                    header : language(code)
+                    pagination : availables
+                    input parms :
+                            {
+                              category_id: 15
+                            }
+
+
+                            response detail
+                            ||
+                            ||
+                           \\ //
+                             ~
+                            "id": 10,
+                            "status": 1,   <------------- 1:pennding 0:comaplete
+                            "push_time": "6:00",  <------- 1:pennding 0 then it is  00:00
+                            "session_id": 19,
+                            "title": "dfg",
+                            "file": "http://localhost/Zensoma/public/file/1706593552_file.mp4",
+                            "category_id": "[\"25\"]",
+                            "creater_id": "1",
+                            "creater_name": "Super Admin",
+                            "creater_type": "admin",
+                            "created_at": "2024-Jan-30 05:45 AM",
+                            "updated_at": "2024-Jan-30 05:45 AM"
+
+
+
+
+==========================================
+
+(35)   V1 => random-quote
+    {
+            url : {{local}}/random-quote
+                    method : get
+                    authorization : no token
+                    header : language(code)
+    }
+
+
+==========================================
+
+
+(36)   V1 => my-favorite-session
+    {
+            url : {{local}}/my-favorite-session
+                    method : get
+                    authorization : no token
+                    header : language(code)
+                    pagination : available
+    }
+
+
+==========================================
+
+
+
+(37)   V1 => get-buddy-session-detail
+    {
+            url : {{local}}/get-buddy-session-detail
+                    method : post
+                    authorization : no token
+                    header : language(code)
+    }
+
+
+===========================================
+
+(38) V1 => dashboard
+
+    {
+            url : {{local}}/dashboard
+                    method : get
+                    authorization :token
+                    header : language(code)
+    }
+
+===========================================
+
+(39) V1 => serach-word
+
+    {
+            url : {{local}}/serach-word
+                    method : post
+                    authorization :no token
+                    header : language(code)
+
+                    input parms :
+                            {
+                                word:check
+                            }
+
+    }
+
+
+
+==============================================
+
+
+(40) V1 => {{live}}add-challenge-friend
+
+    {
+            url : {{live}}add-challenge-friend
+                    method : post
+                    authorization :token
+                    header : language(code)
+
+                    input parms :
+                            {
+                                session_id:31,
+                                user_ids : ["55","56","57","58","59"] [array]
+                            }
+
+    }
+
+===========================================
+
+(41) V1 => {{local}}my-challenges
+
+    {
+            url : {{local}}my-challenges
+                    method : post
+                    authorization :token
+                    header : language(code)
+                    pagination : available
+                      parmas
+                                {
+                                     type= 0,1  0 = send challenge  2 received challenge
+                                }
+   }
+
+
+=========================================
+
+(42) V1 => {{local}}complate-challenge
+{
+            url : {{live}}complate-challenge
+                    method : post
+                    authorization :token
+                    header : language(code)
+
+                    input parms :
+                            {
+                                challenge_id:26,
+                            }
+
+}
+
+======================================
+(43) V1 => get-themes
+
+    {
+            url : {{local}}/get-themes
+                    method : get
+                    authorization :no token
+                    header : language(code)
+    }
+
+===========================================
+
+(44) V1 => {{local}}predefined-question-answers-save
+{
+            url : {{live}}predefined-question-answers-save
+                    method : post
+                    authorization :token
+                    header : language(code)
+
+                    input parms :
+                            {
+                                answers:
+                                {
+                                    question_id: 1,
+                                    option_type:(option_id,value)
+                                    option_id: 1,
+                                    range:10
+
+                                },
+                                  {
+                                    question_id: 2,
+                                    option_type:(option_id,value)
+                                    option_id: 2,
+                                    range:10
+
+                                }
+                            }
+
+}
+
+======================================
+
+(45) V1 => {{local}}theme-save
+{
+            url : {{live}}theme-save
+                    method : post
+                    authorization :token
+                    header : language(code)
+
+                    input parms :
+                            {
+                                theme_id:1 to 4 theme available,
+                            }
+
+}
+
+=======================================
+
+(46) V1 => {{local}}booking
+{
+            url : {{live}}booking
+                    method : post
+                    authorization :token
+                    header : language(code)
+
+                    input parms :
+                            {
+                                slot_id:slot_id which you get in available-slote api,
+                                payment_status:{'confirm','cancel','complete','pending'},
+                            }
+
+}
+
+======================================
+
+(47) v1 = {{local}}get-categories-subcategories-types
+{
+            url : {{local}}/get-themes
+                    method : get
+                    authorization :no token
+                    header : language(code)
+}
+
+======================================
+
+(48) v1 = {{local}}notification
+{
+            url : {{local}}/notification
+                    method : get
+                    authorization :token
+                    header : language(code)
+                    pagination : available
+}
+
+=======================================
+
+(49) V1 => delete-account
+
+    {
+            url : {{local}}/delete-account
+                    method : get
+                    authorization :token
+                    header : language(code)
+    }
+
+=====================================
+
+(50)    V1 =>my-booking
+    {
+        url : {{local}}/my-booking
+                method : post
+                authorization : {{token}}
+                header : language(code)
+                pagination : available
+                    input parm : {
+                                    type : 1, (0 =  upcoming,1 past)
+                                }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
